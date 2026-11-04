@@ -2,6 +2,17 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) · Versions : [SemVer](https://semver.org/lang/fr/).
 
+## [1.0.1] — 2026-11-04
+
+Correctifs issus du rapport Frontend Mentor (`specs/analyse/2026-11-04-rapport-fm.md`).
+
+### Changed
+- Les boutons Subscribe et Dismiss partagent un utilitaire `btn` au lieu de répéter leurs classes (R1).
+
+### Fixed
+- Les liens du pied de page perdent leur soulignement au survol et ont un contour au focus clavier (R2).
+- Le champ email montre un contour de 2 px au focus clavier, en plus du changement de couleur de la bordure (R3).
+
 ## [1.0.0] — 2026-11-04
 
 Première version, soumise sur Frontend Mentor.

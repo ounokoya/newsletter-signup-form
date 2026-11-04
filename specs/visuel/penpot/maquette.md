@@ -85,3 +85,7 @@ Animations : fondu de 200 ms (`ease-out`) entre les états, 150 ms pour le survo
 **Flux « Mobile »** : Formulaire → (Subscribe) → Erreur → (Subscribe après correction) → Succès → (Dismiss) → Formulaire.
 
 Limite : Penpot ne change pas l'état d'un composant au survol ; le survol est simulé par des écrans dédiés.
+
+## À reporter dans Penpot (v1.0.1)
+
+Le plugin Penpot n'était plus connecté au moment des correctifs du rapport FM. À ajouter à la maquette : contour 2 px Blue 800 sur le composant « Champ / Focus » (R3) et état de survol des liens du pied de page, sans soulignement (R2). La spec (§5) fait foi en attendant.
