@@ -30,3 +30,7 @@
 ## Points positifs relevés
 
 `picture` responsive avec dimensions, tokens centralisés dans `@theme`, organisation des dossiers (assets, src, tests, scripts), formulaire accessible (libellé, `autocomplete`, erreur reliée), gestion du focus au succès, README très documenté, messages de commits explicites.
+
+## Suite donnée : v1.0.1 (2026-11-04)
+
+R1, R2 et R3 corrigés en commits séparés (`39aa593`, `e31bfa1`, `d76ca4d`), tests S15 et S16 ajoutés. **33 / 33 tests au vert**, en local et sur le site en ligne après déploiement. R4 appliqué à cette version : un commit par correctif. Le rapport FM n'est pas regénéré automatiquement.
