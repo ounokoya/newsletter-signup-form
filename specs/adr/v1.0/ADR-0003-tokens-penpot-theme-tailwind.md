@@ -27,3 +27,4 @@ La maquette Penpot (validée G3) définit un jeu de tokens « newsletter » : co
 - Changer une couleur du design = changer une ligne de `@theme`.
 - Fitness function : aucune couleur (`#…`, `rgb(`, `hsl(`) dans `index.html`, `src/main.js`, ni dans `src/style.css` hors du bloc `@theme`.
 - Les classes Tailwind de couleurs par défaut (`text-gray-500`…) ne compilent plus : une faute de frappe se voit tout de suite.
+- (v1.0.1, retour FM R1) Un groupe d'utilitaires répété sur plusieurs éléments devient un utilitaire nommé dans `src/style.css` (`@utility btn`, `@utility link`) ; le HTML ne garde que les différences.

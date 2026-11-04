@@ -71,8 +71,9 @@ La page reste utilisable de 320 px aux grands écrans, sans défilement horizont
 
 | Élément | Normal | Survol | Focus | Erreur |
 |---|---|---|---|---|
-| Champ | bordure Grey 50 % | bordure Blue 800 | bordure Blue 800 | bordure Red, fond Red 15 %, texte Red texte |
+| Champ | bordure Grey 50 % | bordure Blue 800 | bordure Blue 800 + contour 2 px Blue 800 décalé de 2 px (v1.0.1, R3) | bordure Red, fond Red 15 %, texte Red texte |
 | Boutons | fond Blue 800 | dégradé + ombre bouton | dégradé + ombre bouton + contour 2 px Blue 800 décalé de 2 px (clavier) | — |
+| Liens du pied de page | soulignés | soulignement retiré (v1.0.1, R2) | contour 2 px de la couleur du texte, décalé de 2 px | — |
 
 Transitions courtes (≈ 200 ms) sur les couleurs et l'ombre, supprimées si `prefers-reduced-motion: reduce`.
 
@@ -84,7 +85,7 @@ Transitions courtes (≈ 200 ms) sur les couleurs et l'ombre, supprimées si `pr
 | A2 | Le message d'erreur est relié au champ (`aria-describedby`) et annoncé par les lecteurs d'écran (`aria-live="polite"`). |
 | A3 | En erreur, le champ porte `aria-invalid="true"` ; l'attribut disparaît quand l'erreur est corrigée. |
 | A4 | Ordre clavier : champ, puis bouton Subscribe ; Entrée dans le champ envoie le formulaire. |
-| A5 | Focus visible sur tous les éléments interactifs. |
+| A5 | Focus visible sur tous les éléments interactifs, signalé autrement que par la couleur seule (contour). |
 | A6 | Focus géré : titre du succès à l'affichage du succès ; champ email après Dismiss. |
 | A7 | Illustration et icônes décoratives : ignorées par les lecteurs d'écran (`alt=""`). |
 | A8 | Textes contrastés à 4,5:1 au moins dans les états normal et erreur (exception documentée : texte blanc sur le dégradé de survol, décision Q5). |
@@ -153,4 +154,12 @@ S13 Given prefers-reduced-motion: reduce
 S14 Given des largeurs de 320, 640, 1023 et 1024 px
     When  la page se charge
     Then  pas de défilement horizontal
+
+S15 Given un lien du pied de page                                    (v1.0.1, R2)
+    When  je le survole
+    Then  son soulignement disparaît
+
+S16 Given le champ email                                             (v1.0.1, R3)
+    When  il reçoit le focus au clavier
+    Then  un contour de 2 px apparaît en plus du changement de couleur de la bordure
 ```
