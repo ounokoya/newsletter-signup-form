@@ -47,3 +47,11 @@
   --shadow-card: 0 15px 60px rgb(0 0 0 / 0.25);
   --shadow-button: 0 16px 32px hsl(4 100% 67% / 0.5);
 }
+
+/* Boutons Subscribe et Dismiss : même rendu et mêmes états (retour FM R1) */
+@utility btn {
+  @apply h-14 w-full cursor-pointer rounded-control bg-blue-800 pt-[3px] font-bold text-white transition-shadow duration-200;
+  @apply hover:bg-linear-to-r hover:from-gradient-start hover:to-gradient-end hover:shadow-button;
+  @apply focus-visible:bg-linear-to-r focus-visible:from-gradient-start focus-visible:to-gradient-end focus-visible:shadow-button;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 motion-reduce:transition-none;
+}
