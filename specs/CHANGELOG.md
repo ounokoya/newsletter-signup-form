@@ -14,7 +14,7 @@ Première version, soumise sur Frontend Mentor.
 - États de survol et de focus : dégradé et ombre sur les boutons, bordure foncée sur le champ, contour au focus clavier.
 - Accessibilité : libellé relié, erreur annoncée (`aria-live`, `aria-invalid`), focus géré, texte d'erreur au contraste AA, pas d'animation avec `prefers-reduced-motion`.
 - 31 tests automatiques (Playwright, axe-core, W3C Nu) dérivés de la spec.
-- Déploiement sur GitHub Pages par GitHub Actions.
+- Déploiement sur GitHub Pages depuis la branche `gh-pages` (`npm run deploy`).
 
 ### Known issues
 - Contrastes du design FM conservés : texte blanc sur le dégradé de survol (2,8 à 3,1:1) et bordure du champ (1,6:1).

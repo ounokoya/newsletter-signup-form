@@ -48,7 +48,7 @@ Users should be able to:
 - [Tailwind CSS v4](https://tailwindcss.com/) — design tokens declared in `@theme`, default palette removed
 - Vanilla JavaScript and the browser's Constraint Validation API
 - Mobile-first layout with Flexbox and CSS Grid (mobile < 640 px, tablet 640–1023 px, desktop ≥ 1024 px)
-- [Vite](https://vite.dev/) for the build, deployed on GitHub Pages with GitHub Actions
+- [Vite](https://vite.dev/) for the build, deployed on GitHub Pages from the `gh-pages` branch (`npm run deploy`)
 - [Playwright](https://playwright.dev/), [axe-core](https://github.com/dequelabs/axe-core) and the W3C Nu validator for tests
 
 ### Workflow

@@ -115,3 +115,7 @@ Le verrou code est levé : Phases 4 à 12 enchaînées par l'agent, arrêt avant
 ## Décision après la Phase 8 (2026-11-04)
 
 Le formulaire mobile s'écarte de 5,84 % de `mobile.jpg` (seuil du plan : 5 %), à cause du rendu de l'image FM (illustration, lissage des polices) ; positions à ± 1 px. Décision humaine : **seuil de 6 % pour ce seul écran**, documenté dans le README (`specs/analyse/2026-11-04-newsletter-signup.md`).
+
+## Changement de déploiement (Phase 11, 2026-11-04)
+
+Le push du workflow GitHub Actions a été refusé : le jeton GitHub CLI n'a pas l'autorisation `workflow`. Pour ne pas demander une autorisation de plus, le site est publié depuis la branche `gh-pages` (`npm run deploy`, script `scripts/deploy-gh-pages.sh`). Retour possible à GitHub Actions après `gh auth refresh -s workflow`.
