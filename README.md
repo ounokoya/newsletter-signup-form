@@ -1,22 +1,27 @@
-# Frontend Mentor - Newsletter sign-up form with success message
+# Frontend Mentor - Newsletter sign-up form with success message solution
 
-![Design preview for the Newsletter sign-up form with success message coding challenge](./preview.jpg)
+This is a solution to the [Newsletter sign-up form with success message challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Workflow](#workflow)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this newsletter form and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - Add their email and submit the form
 - See a success message with their email after successfully submitting the form
@@ -26,87 +31,88 @@ Your users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-### Want some support on the challenge? 
+### Screenshot
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+![Desktop layout of the newsletter sign-up form](./screenshot.jpg)
 
-## Where to find everything
+### Links
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+- Solution URL: added after submission on Frontend Mentor
+- Live Site URL: [ounokoya.github.io/newsletter-signup-form](https://ounokoya.github.io/newsletter-signup-form/)
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+## My process
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Built with
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+- Semantic HTML5 markup (`picture`, `form`, `label`, `section`)
+- [Tailwind CSS v4](https://tailwindcss.com/) — design tokens declared in `@theme`, default palette removed
+- Vanilla JavaScript and the browser's Constraint Validation API
+- Mobile-first layout with Flexbox and CSS Grid (mobile < 640 px, tablet 640–1023 px, desktop ≥ 1024 px)
+- [Vite](https://vite.dev/) for the build, deployed on GitHub Pages with GitHub Actions
+- [Playwright](https://playwright.dev/), [axe-core](https://github.com/dequelabs/axe-core) and the W3C Nu validator for tests
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### Workflow
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+Before any code, the design was analysed and rebuilt:
 
-## Using AI coding assistants
+1. **Visual analysis in Excalidraw** — every screen measured in px (spacing, font sizes, colours, states) → [`specs/visuel/`](./specs/visuel/)
+2. **Penpot mockup and prototype** — colour and type library, components with their states, 10 screens, click-through prototype → [`specs/visuel/penpot/`](./specs/visuel/penpot/)
+3. **Spec and decisions** — expected behaviour, accessibility contracts, 14 Given/When/Then scenarios → [`specs/specifications/`](./specs/specifications/), architecture decisions → [`specs/adr/`](./specs/adr/)
+4. **Code, then tests** — 31 automated tests run against the production build (`npm test`)
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+### What I learned
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+**Styling validation states from ARIA attributes.** The error state lives in the DOM, so the styles and the screen reader stay in sync:
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+```html
+<input id="email" type="email" required aria-describedby="email-error"
+  class="border-grey/50 aria-invalid:border-red aria-invalid:bg-red/15 aria-invalid:text-red-text">
+```
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+**Letting the browser validate the email.** With `novalidate` on the form, `checkValidity()` still applies the HTML email rule, but my own message is shown instead of the browser bubble:
 
-## Building your project
+```js
+email.value = email.value.trim()
+if (!email.checkValidity()) {
+  email.setAttribute('aria-invalid', 'true')
+  error.textContent = 'Valid email required'
+}
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+**Keeping only the design's colours in Tailwind v4.** Resetting the palette makes any colour that is not in the design fail to compile:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```css
+@theme {
+  --color-*: initial;
+  --color-red: hsl(4 100% 67%);
+  --color-blue-800: hsl(234 29% 20%);
+}
+```
 
-## Deploying your project
+### Continued development
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- **Accessibility vs. pixel-perfect.** The design's red error text has a contrast of 2.9:1 (WCAG AA asks 4.5:1), so the error text uses a darker red, `hsl(4, 100%, 42%)`. Two design choices were kept on purpose and are still below WCAG thresholds: white text on the hover gradient (2.8–3.1:1) and the input border (1.6:1, where 3:1 is expected for UI components).
+- **Visual comparison with the design files.** Screenshots differ from the Frontend Mentor JPGs by 0.7–3.7 % of pixels, except the mobile form (5.8 %, accepted threshold 6 %): positions match within 1 px, but the JPG was rendered from a slightly different illustration and with a different font smoothing.
+- **No tablet design** was provided: the tablet layout (centred card with the tablet illustration) is my own proposal.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+### Useful resources
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+- [MDN — Client-side form validation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation) — how `checkValidity()` and `novalidate` work together.
+- [Tailwind CSS — Theme variables](https://tailwindcss.com/docs/theme) — `@theme`, namespaces and resetting the default palette.
+- [WebAIM — Contrast checker](https://webaim.org/resources/contrastchecker/) — to check the error and hover colours.
 
-## Create a custom `README.md`
+### AI Collaboration
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+I used **Claude (Claude Code)** as a pair, inside a spec-driven workflow where I validated each step before the next one:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- **Planning**: choosing the challenge and writing the plan, which I validated.
+- **Design analysis**: measuring the JPG designs and drawing the annotated Excalidraw analysis, which I reviewed and validated.
+- **Mockup**: building the Penpot library, components, screens and prototype, which I validated.
+- **Code and tests**: writing the HTML, Tailwind and JavaScript from the validated spec, plus the Playwright tests.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+What worked well: no code was written before the analysis and the mockup were validated, so the layout matched the design on the first build. What needed my decisions: the design's contrast issues, the missing tablet layout and the accepted visual difference on mobile.
 
-## Submitting your solution
+## Author
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- Frontend Mentor - [@ounokoya](https://www.frontendmentor.io/profile/ounokoya)
+- GitHub - [@ounokoya](https://github.com/ounokoya)
