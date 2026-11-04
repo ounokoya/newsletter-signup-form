@@ -77,6 +77,15 @@ test('S9 — ordre clavier : champ puis bouton', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Subscribe to monthly newsletter' })).toBeFocused()
 })
 
+test('S15 — survol d\'un lien du pied de page : le soulignement disparaît', async ({ page }) => {
+  const link = page.getByRole('link', { name: 'Frontend Mentor' })
+  const decoration = () => link.evaluate((el) => getComputedStyle(el).textDecorationLine)
+
+  expect(await decoration()).toBe('underline')
+  await link.hover()
+  expect(await decoration()).toBe('none')
+})
+
 test('S13 — prefers-reduced-motion : aucune transition sur le bouton et le champ', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   const properties = await page.evaluate(() => ['button[type=submit]', '#email']

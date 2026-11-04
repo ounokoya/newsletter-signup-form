@@ -55,3 +55,9 @@
   @apply focus-visible:bg-linear-to-r focus-visible:from-gradient-start focus-visible:to-gradient-end focus-visible:shadow-button;
   @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 motion-reduce:transition-none;
 }
+
+/* Liens du pied de page : effet visible au survol et au focus (retour FM R2) */
+@utility link {
+  @apply rounded-sm underline underline-offset-2 hover:no-underline;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current;
+}
