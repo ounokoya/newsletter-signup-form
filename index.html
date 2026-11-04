@@ -2,51 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign up for monthly updates on product discovery and measuring success.">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="module" src="./src/main.js"></script>
+
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
+<body class="relative min-h-svh bg-white font-sans text-blue-800 sm:bg-blue-700">
 
-  <!-- Sign-up form start -->
+  <main class="sm:grid sm:min-h-svh sm:place-items-center sm:p-6">
 
-  Stay updated!
+    <!-- Sign-up form start -->
+    <article id="signup" aria-labelledby="signup-title"
+      class="flex flex-col sm:w-[576px] sm:gap-6 sm:rounded-card sm:bg-white sm:p-6 sm:shadow-card lg:w-[928px] lg:flex-row-reverse lg:items-center lg:gap-16">
+      <picture class="shrink-0">
+        <source media="(min-width: 64rem)" srcset="./assets/images/illustration-sign-up-desktop.svg" width="400" height="593">
+        <source media="(min-width: 40rem)" srcset="./assets/images/illustration-sign-up-tablet.svg" width="528" height="360">
+        <img class="h-auto w-full" src="./assets/images/illustration-sign-up-mobile.svg" alt="" width="375" height="284">
+      </picture>
 
-  Join 60,000+ product managers receiving monthly updates on:
+      <div class="flex flex-col gap-6 px-6 py-10 sm:py-4 lg:w-[416px] lg:shrink-0 lg:py-0 lg:pr-0 lg:pl-10">
+        <h1 id="signup-title" class="text-title-mobile font-bold sm:text-title">Stay updated!</h1>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-  Email address
-  email@company.com
+        <ul class="flex flex-col gap-2.5">
+          <li class="flex items-start gap-4">
+            <img class="mt-[1.5px] shrink-0" src="./assets/images/icon-list.svg" alt="" width="21" height="21">
+            Product discovery and building what matters
+          </li>
+          <li class="flex items-start gap-4">
+            <img class="mt-[1.5px] shrink-0" src="./assets/images/icon-list.svg" alt="" width="21" height="21">
+            Measuring to ensure updates are a success
+          </li>
+          <li class="flex items-start gap-4">
+            <img class="mt-[1.5px] shrink-0" src="./assets/images/icon-list.svg" alt="" width="21" height="21">
+            And much more!
+          </li>
+        </ul>
 
-  Subscribe to monthly newsletter
+        <form class="mt-4 flex flex-col gap-6" novalidate>
+          <div class="flex flex-col gap-2">
+            <div class="flex justify-between gap-4 text-xs font-bold">
+              <label for="email">Email address</label>
+              <p id="email-error" class="text-right text-red-text" aria-live="polite"></p>
+            </div>
+            <input id="email" name="email" type="email" autocomplete="email" required
+              placeholder="email@company.com" aria-describedby="email-error"
+              class="h-14 w-full rounded-control border border-grey/50 bg-white px-6 text-blue-800 transition-colors duration-200 placeholder:text-blue-800/50 hover:border-blue-800 focus:border-blue-800 focus:outline-none aria-invalid:border-red aria-invalid:bg-red/15 aria-invalid:text-red-text motion-reduce:transition-none">
+          </div>
 
-  <!-- Sign-up form end -->
+          <button type="submit"
+            class="h-14 w-full cursor-pointer rounded-control bg-blue-800 pt-[3px] font-bold text-white transition-shadow duration-200 hover:bg-linear-to-r hover:from-gradient-start hover:to-gradient-end hover:shadow-button focus-visible:bg-linear-to-r focus-visible:from-gradient-start focus-visible:to-gradient-end focus-visible:shadow-button focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 motion-reduce:transition-none">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+    </article>
+    <!-- Sign-up form end -->
 
-  <!-- Success message start -->
+    <!-- Success message start -->
+    <section id="success" aria-labelledby="success-title" hidden
+      class="flex min-h-svh flex-col px-6 pt-[149px] pb-10 sm:min-h-0 sm:w-[504px] sm:rounded-card sm:bg-white sm:px-16 sm:pt-12 sm:pb-16 sm:shadow-card">
+      <div class="mb-10 flex flex-col">
+        <img src="./assets/images/icon-success.svg" alt="" width="64" height="64">
+        <h1 id="success-title" tabindex="-1" class="mt-10 text-title-mobile font-bold focus:outline-none sm:text-title">Thanks for subscribing!</h1>
+        <p class="mt-6">
+          A confirmation email has been sent to <strong id="success-email" class="font-bold">ash@loremcompany.com</strong>.
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+      </div>
 
-  Thanks for subscribing!
+      <button id="dismiss" type="button"
+        class="mt-auto h-14 w-full cursor-pointer rounded-control bg-blue-800 pt-[3px] font-bold text-white transition-shadow duration-200 hover:bg-linear-to-r hover:from-gradient-start hover:to-gradient-end hover:shadow-button focus-visible:bg-linear-to-r focus-visible:from-gradient-start focus-visible:to-gradient-end focus-visible:shadow-button focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 motion-reduce:transition-none sm:mt-0">
+        Dismiss message
+      </button>
+    </section>
+    <!-- Success message end -->
 
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
+  </main>
 
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <footer class="py-4 text-center text-attribution text-blue-800 sm:absolute sm:inset-x-0 sm:bottom-4 sm:py-0 sm:text-white">
+    Challenge by <a class="underline" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a class="underline" href="https://www.frontendmentor.io/profile/ounokoya">Koya Esdras</a>.
   </footer>
 </body>
 </html>

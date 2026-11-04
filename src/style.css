@@ -1,1 +1,49 @@
+/* Tokens issus de la maquette Penpot (jeu « newsletter ») — ADR-0003 */
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@theme {
+  /* seules les couleurs du design existent comme utilitaires */
+  --color-*: initial;
+  --color-red: hsl(4 100% 67%);
+  --color-red-text: hsl(4 100% 42%); /* texte d'erreur AA, décision Q1 */
+  --color-blue-800: hsl(234 29% 20%);
+  --color-blue-700: hsl(235 18% 26%);
+  --color-grey: hsl(0 0% 58%);
+  --color-white: hsl(0 0% 100%);
+  --color-gradient-start: #ff527b;
+  --color-gradient-end: #ff6a3a;
+
+  --font-sans: "Roboto", sans-serif;
+
+  --text-title: 3.5rem;
+  --text-title--line-height: 1;
+  --text-title-mobile: 2.5rem;
+  --text-title-mobile--line-height: 1;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-attribution: 0.6875rem;
+  --text-attribution--line-height: 1.5;
+
+  --radius-control: 0.5rem;
+  --radius-illustration: 1rem;
+  --radius-card: 2.25rem;
+
+  --shadow-card: 0 15px 60px rgb(0 0 0 / 0.25);
+  --shadow-button: 0 16px 32px hsl(4 100% 67% / 0.5);
+}
