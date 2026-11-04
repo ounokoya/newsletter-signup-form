@@ -82,4 +82,20 @@ Quel challenge Junior gratuit permet de valider toutes les phases du nouveau cyc
 - Le starter contient 7 images de design (et non 4 comme l'aperçu du site) : `desktop-design`, `active-states`, `error-states`, `desktop-success`, `desktop-success-active` (1440 × 1080), `mobile-design` (375 × 842), `mobile-success` (375 × 812).
 - Il fournit aussi une **illustration tablette** (`illustration-sign-up-tablet.svg`) : une disposition tablette est donc attendue (point flou 6).
 - Polices Roboto 400 et 700 fournies en local (`assets/fonts/`).
-- `AGENTS.md` et `CLAUDE.md` du starter (consignes FM pour les assistants IA) ont été **mis de côté**, en attente de décision : ils demandent à l'IA de jouer le rôle de tuteur et de ne pas écrire le code, ce qui contredit la Phase 6 du plan.
+- `AGENTS.md` et `CLAUDE.md` du starter (consignes FM pour les assistants IA) demandent à l'IA de jouer le rôle de tuteur et de ne pas écrire le code, ce qui contredit la Phase 6 du plan. Décision (2026-11-04) : conservés comme référence sous `specs/reference/starter-AGENTS.md` et `starter-CLAUDE.md`, pour qu'aucun outil IA ne les charge automatiquement.
+
+## Validation G2 — analyse Excalidraw (2026-11-04)
+
+Analyse validée telle quelle (`specs/visuel/newsletter-signup-analyse.*`). Décisions retenues :
+
+| # | Sujet | Décision |
+|---|---|---|
+| Q1 | Contraste du texte d'erreur (Red 2,9:1) | Texte d'erreur en `hsl(4, 100%, 42%)` = `#D60E00` (5,4:1) ; Red FM gardé pour la bordure et le fond du champ |
+| Q2 | Tablette sans maquette | 640 à 1023 px : carte centrée sur Blue 700, 1 colonne, illustration tablette 528 × 360 en haut |
+| Q3 | Succès mobile | Le bloc commence à 149 px du haut ; bouton collé en bas, à 40 px |
+| Q4 | Survol du champ | Bordure Blue 800, comme le focus |
+| Q5 | Contrastes FM sous les seuils (bouton survolé 2,8:1, bordure du champ 1,6:1) | Design FM conservé, écart noté dans le README |
+| Q6 | Coins carrés de l'illustration sur `etat-survol-focus.jpg` | On suit `desktop.jpg` : rayon 16 |
+| Q7 | Pied de page « Challenge by Frontend Mentor » | Gardé, petit, en bas de page |
+
+Points de rupture retenus : mobile < 640 px, tablette 640–1023 px, desktop ≥ 1024 px.
