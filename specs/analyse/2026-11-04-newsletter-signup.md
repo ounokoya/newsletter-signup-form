@@ -77,3 +77,9 @@ Décision demandée à l'humain avant SHIP :
 - ou garder 5 % et chercher à imiter le rendu de l'outil FM (réglages de police), sans garantie de résultat.
 
 **Décision (2026-11-04)** : seuil de 6 % accepté pour le seul formulaire mobile, documenté dans le README. Après mise à jour du test : **31 / 31 tests au vert**. Verdict final : **conforme**, passage à DOCUMENT et SHIP.
+
+## 5. Vérification en ligne (Phase 12)
+
+Site publié : https://ounokoya.github.io/newsletter-signup-form/ (branche `gh-pages`, build GitHub Pages « built »).
+
+`BASE_URL=https://ounokoya.github.io/newsletter-signup-form/ npx playwright test --workers=2` : **31 / 31 au vert**, mêmes taux de pixels différents qu'en local (1,73 % · 3,16 % · 1,50 % · 0,68 % · 0,69 % · 5,84 % · 3,70 %). Un premier passage avec tous les tests en parallèle avait échoué sur des coupures réseau (`ERR_NETWORK_CHANGED`), sans lien avec le site.
