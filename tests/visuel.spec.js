@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 import { open, submit, diffRatio } from './helpers.js'
 
 // Spec §7 — scénario S11 : au plus 5 % de pixels différents des images FM
+// (6 % pour le formulaire mobile : rendu de l'image FM, décision du 2026-11-04)
 
 const MAX_RATIO = 0.05
 const button = (page, name) => page.getByRole('button', { name })
@@ -24,11 +25,11 @@ const screens = [
       await button(page, 'Dismiss message').hover()
     },
   },
-  { name: 'formulaire mobile', size: [375, 842], ref: 'mobile.jpg', reach: async () => {} },
+  { name: 'formulaire mobile', size: [375, 842], ref: 'mobile.jpg', max: 0.06, reach: async () => {} },
   { name: 'succès mobile', size: [375, 812], ref: 'etat-succes-mobile.jpg', reach: (page) => submit(page, 'ash@loremcompany.com') },
 ]
 
-for (const { name, size, ref, reach } of screens) {
+for (const { name, size, ref, reach, max = MAX_RATIO } of screens) {
   test(`S11 — ${name} (${size.join(' × ')}) proche de ${ref}`, async ({ page }, testInfo) => {
     await open(page, ...size)
     await page.emulateMedia({ reducedMotion: 'reduce' }) // pas de transition en cours pendant la capture
@@ -39,6 +40,6 @@ for (const { name, size, ref, reach } of screens) {
     const ratio = diffRatio(shot, ref)
     testInfo.annotations.push({ type: 'pixels différents', description: `${(ratio * 100).toFixed(2)} %` })
 
-    expect(ratio).toBeLessThanOrEqual(MAX_RATIO)
+    expect(ratio).toBeLessThanOrEqual(max)
   })
 }

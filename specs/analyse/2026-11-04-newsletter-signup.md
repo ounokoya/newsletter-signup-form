@@ -75,3 +75,5 @@ Analyse :
 Décision demandée à l'humain avant SHIP :
 - accepter l'écart et fixer le seuil de ce seul écran à 6 %, en le documentant dans le README ;
 - ou garder 5 % et chercher à imiter le rendu de l'outil FM (réglages de police), sans garantie de résultat.
+
+**Décision (2026-11-04)** : seuil de 6 % accepté pour le seul formulaire mobile, documenté dans le README. Après mise à jour du test : **31 / 31 tests au vert**. Verdict final : **conforme**, passage à DOCUMENT et SHIP.

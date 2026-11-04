@@ -111,3 +111,7 @@ Maquette validée telle quelle (`specs/visuel/penpot/maquette.md`), avec les cho
 5. Le survol est simulé dans le prototype par des écrans dédiés (limite de Penpot).
 
 Le verrou code est levé : Phases 4 à 12 enchaînées par l'agent, arrêt avant la soumission FM (Phase 13).
+
+## Décision après la Phase 8 (2026-11-04)
+
+Le formulaire mobile s'écarte de 5,84 % de `mobile.jpg` (seuil du plan : 5 %), à cause du rendu de l'image FM (illustration, lissage des polices) ; positions à ± 1 px. Décision humaine : **seuil de 6 % pour ce seul écran**, documenté dans le README (`specs/analyse/2026-11-04-newsletter-signup.md`).

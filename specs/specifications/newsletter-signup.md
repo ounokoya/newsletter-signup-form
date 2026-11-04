@@ -140,6 +140,7 @@ S11 Given les écrans FORMULAIRE, ERREUR, focus + survol, SUCCÈS et SUCCÈS sur
       et FORMULAIRE (375 × 842), SUCCÈS (375 × 812)
     When  on compare la capture à l'image FM correspondante
     Then  au plus 5 % des pixels diffèrent (un canal à plus de 40 sur 255)
+          — 6 % pour FORMULAIRE 375 × 842 (rendu de l'image FM, décision du 2026-11-04)
 
 S12 Given le code HTML de la page
     When  le validateur W3C (Nu) l'analyse
