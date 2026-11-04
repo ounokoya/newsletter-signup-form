@@ -99,3 +99,15 @@ Analyse validée telle quelle (`specs/visuel/newsletter-signup-analyse.*`). Déc
 | Q7 | Pied de page « Challenge by Frontend Mentor » | Gardé, petit, en bas de page |
 
 Points de rupture retenus : mobile < 640 px, tablette 640–1023 px, desktop ≥ 1024 px.
+
+## Validation G3 — maquette Penpot (2026-11-04)
+
+Maquette validée telle quelle (`specs/visuel/penpot/maquette.md`), avec les choix faits pendant la Phase 3 :
+
+1. Le texte saisi dans le champ en erreur utilise aussi `#D60E00` (logique de Q1).
+2. Focus clavier des boutons : dégradé du survol + contour 2 px Blue 800, décalé de 2 px.
+3. Tablette : carte de 576 px, padding 24, illustration 528 × 360 en haut, contenu de 480 px, titre 56.
+4. Ombre des cartes : `0 15px 60px` noir à 25 %.
+5. Le survol est simulé dans le prototype par des écrans dédiés (limite de Penpot).
+
+Le verrou code est levé : Phases 4 à 12 enchaînées par l'agent, arrêt avant la soumission FM (Phase 13).
