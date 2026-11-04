@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: added after submission on Frontend Mentor
+- Solution URL: [frontendmentor.io/solutions/newsletter-form-with-tailwind-v4-native-validation-and-playwright-zqE-xVEsyZ](https://www.frontendmentor.io/solutions/newsletter-form-with-tailwind-v4-native-validation-and-playwright-zqE-xVEsyZ)
 - Live Site URL: [ounokoya.github.io/newsletter-signup-form](https://ounokoya.github.io/newsletter-signup-form/)
 
 ## My process
