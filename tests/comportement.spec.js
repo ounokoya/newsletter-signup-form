@@ -86,6 +86,16 @@ test('S15 — survol d\'un lien du pied de page : le soulignement disparaît', a
   expect(await decoration()).toBe('none')
 })
 
+test('S16 — focus clavier sur le champ : contour de 2 px en plus de la bordure', async ({ page }) => {
+  await page.keyboard.press('Tab')
+  const style = await page.getByLabel('Email address').evaluate((el) => {
+    const s = getComputedStyle(el)
+    return [s.outlineStyle, s.outlineWidth, s.outlineOffset]
+  })
+
+  expect(style).toEqual(['solid', '2px', '2px'])
+})
+
 test('S13 — prefers-reduced-motion : aucune transition sur le bouton et le champ', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   const properties = await page.evaluate(() => ['button[type=submit]', '#email']
