@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign up for monthly updates on product discovery and measuring success.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/newsletter-signup-form/assets/favicon-32x32-DQjEQYWa.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <script type="module" crossorigin src="/newsletter-signup-form/assets/index-TKsFlms4.js"></script>
+  <link rel="stylesheet" crossorigin href="/newsletter-signup-form/assets/index-DQfxJBk9.css">
+</head>
+<body class="relative min-h-svh bg-white font-sans text-blue-800 sm:bg-blue-700">
+
+  <main class="sm:grid sm:min-h-svh sm:place-items-center sm:p-6">
+
+    <!-- Sign-up form start -->
+    <article id="signup" aria-labelledby="signup-title"
+      class="flex flex-col sm:w-[576px] sm:gap-6 sm:rounded-card sm:bg-white sm:p-6 sm:shadow-card lg:w-[928px] lg:flex-row-reverse lg:items-center lg:gap-16">
+      <picture class="shrink-0">
+        <source media="(min-width: 64rem)" srcset="/newsletter-signup-form/assets/illustration-sign-up-desktop-DX21DkyK.svg" width="400" height="593">
+        <source media="(min-width: 40rem)" srcset="/newsletter-signup-form/assets/illustration-sign-up-tablet-CLCqFoBb.svg" width="528" height="360">
+        <img class="h-auto w-full" src="/newsletter-signup-form/assets/illustration-sign-up-mobile-DkrvVqU_.svg" alt="" width="375" height="284">
+      </picture>
+
+      <div class="flex flex-col gap-6 px-6 py-10 sm:py-4 lg:w-[416px] lg:shrink-0 lg:py-0 lg:pr-0 lg:pl-10">
+        <h1 id="signup-title" class="text-title-mobile font-bold sm:text-title">Stay updated!</h1>
+
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+        <ul class="flex flex-col gap-2.5">
+          <li class="flex items-start gap-4">
+            <img class="mt-[1.5px] shrink-0" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='21'%20height='21'%20viewBox='0%200%2021%2021'%3e%3cg%20fill='none'%3e%3ccircle%20cx='10.5'%20cy='10.5'%20r='10.5'%20fill='%23FF6155'/%3e%3cpath%20stroke='%23FFF'%20stroke-width='2'%20d='M6%2011.381%208.735%2014%2015%208'/%3e%3c/g%3e%3c/svg%3e" alt="" width="21" height="21">
+            Product discovery and building what matters
+          </li>
+          <li class="flex items-start gap-4">
+            <img class="mt-[1.5px] shrink-0" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='21'%20height='21'%20viewBox='0%200%2021%2021'%3e%3cg%20fill='none'%3e%3ccircle%20cx='10.5'%20cy='10.5'%20r='10.5'%20fill='%23FF6155'/%3e%3cpath%20stroke='%23FFF'%20stroke-width='2'%20d='M6%2011.381%208.735%2014%2015%208'/%3e%3c/g%3e%3c/svg%3e" alt="" width="21" height="21">
+            Measuring to ensure updates are a success
+          </li>
+          <li class="flex items-start gap-4">
+            <img class="mt-[1.5px] shrink-0" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='21'%20height='21'%20viewBox='0%200%2021%2021'%3e%3cg%20fill='none'%3e%3ccircle%20cx='10.5'%20cy='10.5'%20r='10.5'%20fill='%23FF6155'/%3e%3cpath%20stroke='%23FFF'%20stroke-width='2'%20d='M6%2011.381%208.735%2014%2015%208'/%3e%3c/g%3e%3c/svg%3e" alt="" width="21" height="21">
+            And much more!
+          </li>
+        </ul>
+
+        <form class="mt-4 flex flex-col gap-6" novalidate>
+          <div class="flex flex-col gap-2">
+            <div class="flex justify-between gap-4 text-xs font-bold">
+              <label for="email">Email address</label>
+              <p id="email-error" class="text-right text-red-text" aria-live="polite"></p>
+            </div>
+            <input id="email" name="email" type="email" autocomplete="email" required
+              placeholder="email@company.com" aria-describedby="email-error"
+              class="h-14 w-full rounded-control border border-grey/50 bg-white px-6 text-blue-800 transition-colors duration-200 placeholder:text-blue-800/50 hover:border-blue-800 focus:border-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800 aria-invalid:border-red aria-invalid:bg-red/15 aria-invalid:text-red-text motion-reduce:transition-none">
+          </div>
+
+          <button type="submit" class="btn">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </article>
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+    <section id="success" aria-labelledby="success-title" hidden
+      class="flex min-h-svh flex-col px-6 pt-[149px] pb-10 sm:min-h-0 sm:w-[504px] sm:rounded-card sm:bg-white sm:px-16 sm:pt-12 sm:pb-16 sm:shadow-card">
+      <div class="mb-10 flex flex-col">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%20viewBox='0%200%2064%2064'%3e%3cdefs%3e%3clinearGradient%20id='a'%20x1='100%25'%20x2='0%25'%20y1='0%25'%20y2='100%25'%3e%3cstop%20offset='0%25'%20stop-color='%23FF6A3A'/%3e%3cstop%20offset='100%25'%20stop-color='%23FF527B'/%3e%3c/linearGradient%3e%3c/defs%3e%3cg%20fill='none'%3e%3ccircle%20cx='32'%20cy='32'%20r='32'%20fill='url(%23a)'/%3e%3cpath%20stroke='%23FFF'%20stroke-width='4'%20d='m18.286%2034.686%208.334%207.98%2019.094-18.285'/%3e%3c/g%3e%3c/svg%3e" alt="" width="64" height="64">
+        <h1 id="success-title" tabindex="-1" class="mt-10 text-title-mobile font-bold focus:outline-none sm:text-title">Thanks for subscribing!</h1>
+        <p class="mt-6">
+          A confirmation email has been sent to <strong id="success-email" class="font-bold">ash@loremcompany.com</strong>.
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+      </div>
+
+      <button id="dismiss" type="button" class="btn mt-auto sm:mt-0">Dismiss message</button>
+    </section>
+    <!-- Success message end -->
+
+  </main>
+
+  <footer class="py-4 text-center text-attribution text-blue-800 sm:absolute sm:inset-x-0 sm:bottom-4 sm:py-0 sm:text-white">
+    Challenge by <a class="link" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a class="link" href="https://www.frontendmentor.io/profile/ounokoya">Koya Esdras</a>.
+  </footer>
+</body>
+</html>
