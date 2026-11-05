@@ -34,3 +34,12 @@
 ## Suite donnée : v1.0.1 (2026-11-04)
 
 R1, R2 et R3 corrigés en commits séparés (`39aa593`, `e31bfa1`, `d76ca4d`), tests S15 et S16 ajoutés. **33 / 33 tests au vert**, en local et sur le site en ligne après déploiement. R4 appliqué à cette version : un commit par correctif. Le rapport FM n'est pas regénéré automatiquement.
+
+## Regénération du rapport (SDL-FM 1.4.0)
+
+| Date | Version relue par FM | Résultat |
+|---|---|---|
+| 2026-11-04 | v1.0.0 (soumission) | Rapport IA 8,9 / 10 |
+| 2026-11-05 | — | v1.0.1 poussée et déployée, mais pas encore relue : « Regenerate report » est grisé (il faut un crédit de rapport IA). Attendus réglés : R1 à R3 et le lien de la solution. En attente dans `specs/TASKS.md` du dossier racine, après le Multi-step form |
+
+Capture FM juste ; la v1.0.1 ne change pas l'apparence : pas de « Regenerate screenshot ».
