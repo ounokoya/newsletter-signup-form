@@ -42,7 +42,8 @@ Couleurs (`color.*`, dont `gradient-start` / `gradient-end`), police (`font.fami
 | Composant | États |
 |---|---|
 | Bouton | Normal (Blue 800) · Survol (dégradé + ombre `0 16 32` Red 50 %) · Focus clavier (dégradé + contour 2 px Blue 800) |
-| Champ | Normal (bordure Grey 50 %, placeholder) · Survol (bordure Blue 800, Q4) · Focus (bordure Blue 800, valeur saisie) · Erreur (bordure Red, fond Red 15 %, texte `#D60E00`) |
+| Champ | Normal (bordure Grey 50 %, placeholder) · Survol (bordure Blue 800, Q4) · Focus (bordure Blue 800, valeur saisie, **contour 2 px Blue 800 décalé de 2 px**, v1.0.1 R3) · Erreur (bordure Red, fond Red 15 %, texte `#D60E00`) |
+| Lien du pied de page (v1.0.1, R2) | Normal (blanc 11 px, souligné) · Survol (soulignement retiré) · Focus clavier (souligné + contour 2 px blanc décalé de 2 px) |
 | Libellé | Normal · Erreur (« Valid email required » à droite, `#D60E00`) |
 | Élément de liste | Icône 21 × 21 + 16 + texte |
 
@@ -86,6 +87,10 @@ Animations : fondu de 200 ms (`ease-out`) entre les états, 150 ms pour le survo
 
 Limite : Penpot ne change pas l'état d'un composant au survol ; le survol est simulé par des écrans dédiés.
 
-## À reporter dans Penpot (v1.0.1)
+## Report de la v1.0.1 dans Penpot (2026-11-05)
 
-Le plugin Penpot n'était plus connecté au moment des correctifs du rapport FM. À ajouter à la maquette : contour 2 px Blue 800 sur le composant « Champ / Focus » (R3) et état de survol des liens du pied de page, sans soulignement (R2). La spec (§5) fait foi en attendant.
+Fait avec le plugin reconnecté sur ce fichier (« Newsletter sign-up form ») :
+- **R3** : contour de focus clavier ajouté au composant « Champ / Focus » (rectangle 384 × 64, rayon 12, trait intérieur 2 px Blue 800, à −4 px : 2 px d'écart avec la bordure) ;
+- **R2** : nouveaux composants « Lien du pied de page / Normal, Survol, Focus clavier » sur fond Blue 700.
+
+Exports : `composant-champ-focus.png`, `composant-lien-pied-de-page-{normal,survol,focus}.png` (échelle 2). L'exportateur de Penpot dessinait ce jour-là les textes avec une police de remplacement (serif) ; dans le fichier Penpot, ils sont en Roboto. Les écrans, qui reproduisent les images FM (sans focus clavier), sont inchangés.
